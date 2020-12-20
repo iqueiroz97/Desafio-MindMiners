@@ -4,13 +4,13 @@ cliente = 0
 idades = []
 idade = 0
 senhas = []
-tOper = ["1 - Idade (Do mais velho para o mais novo)", "2 - Ordem de chegada (Senha)"]
+ordem = ["\n1 - Idade (Do mais velho para o mais novo)", "2 - Ordem de chegada (Senha)\n"]
 loop = 0
 
 quantCliente = input("Quantos clientes estão na fila?: ")
 
 while loop < int(quantCliente):
-    cliente = input("Qual o nome do " + str(loop + 1) + "° cliente?: ")
+    cliente = input("\nQual o nome do " + str(loop + 1) + "° cliente?: ")
     clientes.append(cliente)
 
     idade = input("Qual a idade do " + str(loop + 1) + "° cliente?: ")
@@ -19,16 +19,20 @@ while loop < int(quantCliente):
     senha = randint(1, 9999)
     senhas.append(senha)
 
-    print(cliente + " tem " + idade +  " anos e sua senha é: " + str(senha))
+    print("\n" + cliente + " tem " + idade +  " anos e sua senha é: " + str(senha))
 
     loop+=1
 
+for prio in ordem:
+    print(prio)
+
 prioridade = int(input("Como o cliente será chamado? "))
 
-for prio in tOper:
-        print(prio)
-
 if prioridade == 1:
-    print(max(idades, key=int))
+    print("\nO cliente mais velho tem " + str(max(idades)) + " anos")
+
+
+else:
+    print("\nA senha mais baixa é " + str(min(senhas)))
 
 #print(clientes, idades, senhas)
