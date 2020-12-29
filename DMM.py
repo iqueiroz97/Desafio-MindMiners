@@ -1,4 +1,5 @@
 from random import randint
+from time import sleep
 clientes = []
 cliente = 0
 idades = []
@@ -30,9 +31,11 @@ prioridade = int(input("Como o cliente será chamado? "))
 
 if prioridade == 1:
     print("\nO cliente mais velho tem " + str(max(idades)) + " anos")
+    sleep(5)
 
 
 else:
     print("\nA senha mais baixa é " + str(min(senhas)))
+    sleep(5)
 
 #print(clientes, idades, senhas)
